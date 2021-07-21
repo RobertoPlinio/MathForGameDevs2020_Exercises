@@ -56,8 +56,8 @@ public class Coil : MonoBehaviour
             actualPoint.x = Mathf.Cos(turnAmount) * radius_A;
             actualPoint.y = percent * height;
 
-            relativePrevious = transform.InverseTransformPoint(previousPoint); //Just to make the code easier to read
-            relativeActual = transform.InverseTransformPoint(actualPoint);
+            relativePrevious = transform.TransformPoint(previousPoint); //Just to make the code easier to read
+            relativeActual = transform.TransformPoint(actualPoint);
 
             if (i > 0) {
                 if (!lerpColors)
@@ -87,8 +87,8 @@ public class Coil : MonoBehaviour
             actualPoint.z = Mathf.Sin(turnAmount) * radius;
             actualPoint.x = Mathf.Cos(turnAmount) * radius;
 
-            relativePrevious = transform.InverseTransformPoint(previousPoint);
-            relativeActual = transform.InverseTransformPoint(actualPoint);
+            relativePrevious = transform.TransformPoint(previousPoint);
+            relativeActual = transform.TransformPoint(actualPoint);
 
             if (drawTorus && i > 0) Debug.DrawLine(relativePrevious, relativeActual, Color.blue);
 
