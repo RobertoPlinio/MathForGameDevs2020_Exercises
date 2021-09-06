@@ -22,7 +22,7 @@ public class Inventory_A : MonoBehaviour
         for (int i = 0; i < numberOfItems; i++) {
             float angle = i * itemDifferenceAngle - angleOffset;
             Vector3 itemPos = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * arcRadius;
-            Handles.DrawWireDisc(itemPos, transform.forward, itemRadius);
+            Handles.DrawWireDisc(transform.TransformPoint(itemPos), transform.forward, itemRadius);
         }
     }
 }
